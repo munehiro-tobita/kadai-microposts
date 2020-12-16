@@ -9,10 +9,12 @@
         <div>
           <p class="mb-0"><%= micropost.content %></p>
         </div>
-        <div>
+        <div style = "display: flex;">
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
+            <%# お気に入り追加/削除ボタン %>
+            <%= render "favorites/favorite_button" , micropost: micropost %>
         </div>
       </div>
     </li>
